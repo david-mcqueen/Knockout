@@ -1,6 +1,4 @@
-
-
-define("TaxBrackets", ["knockout"], function(ko){
+define(["knockout"], function(ko){
 
 
   function TaxBracket(name, value, threshold, amountIncluded) {
@@ -18,8 +16,7 @@ define("TaxBrackets", ["knockout"], function(ko){
 
 
 
-  // Overall viewmodel for this screen, along with initial state
-  function TaxCalculatorViewModel() {
+  function TaxCalculatorViewModel(params) {
 
       var self = this;
       self.grossSalary = ko.observable(0);
@@ -64,5 +61,5 @@ define("TaxBrackets", ["knockout"], function(ko){
         });
       }
   }
-  return new TaxCalculatorViewModel();
+  return TaxCalculatorViewModel;
 });

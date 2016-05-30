@@ -2,7 +2,7 @@ require.config({
     baseUrl: 'js',
     paths: {
         'knockout': 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min',
-        'TaxBrackets': 'NewTaxBrackets',
+        'MainViewModel': 'MainViewModel',
         // 'FoodViewModel': 'widgets/like-widget/like-widget-VM',
         text: 'lib/text'
     }
@@ -10,12 +10,18 @@ require.config({
 
 
 // Load modules and use them
-require(['knockout', 'TaxBrackets'], function(ko, tax){
+require(['knockout', 'MainViewModel'], function(ko, VM){
 
   ko.components.register('food-widget', {
     viewModel: { require: 'widgets/food-widget/food-widget' },
     template: { require: 'text!widgets/food-widget/food-widget.html' }
   });
-    ko.applyBindings(tax, document.getElementById("TaxView"));
+
+  ko.components.register('tax-widget', {
+    viewModel: { require: 'widgets/tax-widget/tax-widget' },
+    template: { require: 'text!widgets/tax-widget/tax-widget.html' }
+  });
+
+    ko.applyBindings(VM, document.getElementById("TaxView"));
     // ko.applyBindings(food, document.getElementById("FoodView"));
 });

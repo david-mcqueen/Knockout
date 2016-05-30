@@ -1,0 +1,35 @@
+<h1>Salary Calculator</h1>
+
+<p>
+  Gross Salary
+  <input data-bind="value: grossSalary, valueUpdate: 'afterkeydown'"  />
+  <input type="checkbox" data-bind="checked: displayTaxbracketBreakdown" />
+</p>
+
+
+<table>
+    <thead><tr>
+        <th data-bind="visible: displayTaxbracketBreakdown">Tax Bracket</th>
+        <th data-bind="visible: displayTaxbracketBreakdown">Pct</th>
+        <th data-bind="visible: displayTaxbracketBreakdown">Threshold</th>
+        <th>Taxable</th>
+        <th>Total</th>
+    </tr></thead>
+
+    <tbody data-bind="foreach: TaxBrackets, visible: displayTaxbracketBreakdown">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: value"></td>
+            <td data-bind="text: threshold"></td>
+            <td data-bind="text: amountIncluded"></td>
+            <td data-bind="text: taxPayable"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total</td>
+        <td data-bind="text: totalTaxable"></td>
+        <td data-bind="text: totalTaxed"></td>
+      </tr>
+    </tfoot>
+</table>
