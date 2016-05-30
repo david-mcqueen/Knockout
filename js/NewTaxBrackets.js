@@ -16,15 +16,28 @@ define("TaxBrackets", ["knockout"], function(ko){
 
   }
 
+  function Product(name, rating) {
+    this.name = name;
+    this.userRating = ko.observable(rating || null);
+}
 
-  
+
+
+
   // Overall viewmodel for this screen, along with initial state
   function TaxCalculatorViewModel() {
+
       var self = this;
       self.grossSalary = ko.observable(0);
       self.totalTaxable = ko.observable();
       self.totalTaxed = ko.observable();
       self.displayTaxbracketBreakdown = ko.observable(true);
+
+      this.products = [
+        new Product('Garlic bread'),
+        new Product('Pain au chocolat'),
+        new Product('Seagull spaghetti', 'like') // This one was already 'liked'
+    ];
 
       self.grossSalary.subscribe(function(newValue){
         self.calculateBracketBreakdown(newValue);

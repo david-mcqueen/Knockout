@@ -42,6 +42,14 @@
     </tfoot>
 </table>
 
+
+<ul data-bind="foreach: products">
+    <li class="product">
+        <strong data-bind="text: name"></strong>
+        <like-widget params="value: userRating"></like-widget>
+    </li>
+</ul>
+
 <script data-main="js/main" src="js/lib/require.js"></script>
 </body>
 </html>
