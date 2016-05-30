@@ -5,9 +5,14 @@
     <title>Salary Calculator</title>
 </head>
 <body>
-<div id="TaxView">
+<div id="MainView">
+  <h1>Salary Calculator</h1>
+  <p>
+    Gross Salary
+    <input data-bind="value: grossSalary, valueUpdate: 'afterkeydown'"  />
+  </p>
 
-  <tax-widget></tax-widget>
+  <tax-widget params="grossSalary: grossSalary"></tax-widget>
   <food-widget></food-widget>
 </div>
 

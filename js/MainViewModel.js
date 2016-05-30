@@ -1,6 +1,6 @@
 define("MainViewModel", ["knockout"], function(ko){
   function MainViewModel(){
-    var self = this;
+    this.grossSalary = ko.observable();
   }
 
   return new MainViewModel();

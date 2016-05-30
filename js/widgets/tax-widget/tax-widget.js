@@ -11,20 +11,14 @@ define(["knockout"], function(ko){
     self.taxPayable = ko.computed(function(){
       return self.amountIncluded() * (value / 100);
     });
-
   }
 
-
-
   function TaxCalculatorViewModel(params) {
-
       var self = this;
-      self.grossSalary = ko.observable(0);
+      self.grossSalary = params.grossSalary;
       self.totalTaxable = ko.observable();
       self.totalTaxed = ko.observable();
       self.displayTaxbracketBreakdown = ko.observable(true);
-
-
 
       self.grossSalary.subscribe(function(newValue){
         self.calculateBracketBreakdown(newValue);

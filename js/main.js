@@ -22,6 +22,6 @@ require(['knockout', 'MainViewModel'], function(ko, VM){
     template: { require: 'text!widgets/tax-widget/tax-widget.html' }
   });
 
-    ko.applyBindings(VM, document.getElementById("TaxView"));
-    // ko.applyBindings(food, document.getElementById("FoodView"));
+  ko.applyBindings(VM, document.getElementById("MainView"));
+  // ko.applyBindings(food, document.getElementById("FoodView"));
 });

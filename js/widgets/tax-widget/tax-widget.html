@@ -1,12 +1,7 @@
-<h1>Salary Calculator</h1>
-
-<p>
-  Gross Salary
-  <input data-bind="value: grossSalary, valueUpdate: 'afterkeydown'"  />
-  <input type="checkbox" data-bind="checked: displayTaxbracketBreakdown" />
-</p>
-
-
+<label>
+  Display breakdown
+</label>
+<input type="checkbox" data-bind="checked: displayTaxbracketBreakdown" />
 <table>
     <thead><tr>
         <th data-bind="visible: displayTaxbracketBreakdown">Tax Bracket</th>
