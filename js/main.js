@@ -22,6 +22,11 @@ require(['knockout', 'MainViewModel'], function(ko, VM){
     template: { require: 'text!widgets/tax-widget/tax-widget.html' }
   });
 
+  ko.components.register('compount-interest-widget', {
+    viewModel: { require: 'widgets/compound-interest-widget/compound-interest-widget' },
+    template: { require: 'text!widgets/compound-interest-widget/compound-interest-widget.html' }
+  });
+
   ko.applyBindings(VM, document.getElementById("MainView"));
   // ko.applyBindings(food, document.getElementById("FoodView"));
 });

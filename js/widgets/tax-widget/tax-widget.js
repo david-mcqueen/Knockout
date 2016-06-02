@@ -16,6 +16,7 @@ define(["knockout"], function(ko){
   function TaxCalculatorViewModel(params) {
       var self = this;
       self.grossSalary = params.grossSalary;
+      self.runningTotal = params.runningTotal;
       self.totalTaxable = ko.observable();
       self.totalTaxed = ko.observable();
       self.displayTaxbracketBreakdown = ko.observable(true);
